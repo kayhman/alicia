@@ -32,7 +32,7 @@ function Ball(radius, offset)
     shape = CircleShape()
     set_radius(shape, radius)
     set_origin(shape, Vector2f(radius, radius))
-    green = convert(Int64, round(rand() * 255.0))
+    green = convert(Int64, round(rand() * 125.0))
     for i=1:20
         c = copy(shape)
         t = convert(Int64, 255 - i * 255 / trailSize)
@@ -43,7 +43,7 @@ function Ball(radius, offset)
     #############
     # Init Ball#
     #############
-    traj = History{Vector{Float64}}([], 1000, 0.005)
+    traj = History{Vector{Float64}}([], 1000, 0.1)
     ball = Ball(CircleShape(), trail, traj, offset)
     
     set_radius(ball.shape, radius)
